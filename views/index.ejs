@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="cadastro, noticia, NodeJs">
+    <title>Cadastro</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, rgb(22, 48, 194), rgb(9, 202, 236));
+            color: white;
+            text-align: center;
+        }
+
+        #main-title{
+            margin-top: 2em;
+            font-size: 2.5em;
+        }
+
+        .form-section{
+            width: 100%;
+            margin: auto;
+           padding: 1em;
+           box-sizing: border-box;
+        }
+
+        .form-user{
+            box-sizing: border-box;
+        }
+
+        
+
+        .grid label{
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .form-user-input{
+            border: 0;
+            padding: .70em;
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .form-user-input:focus{
+            outline: none;
+            border-color: turquoise;
+        }
+
+        .form-user-button{
+            width: 100%;
+            padding: .60em 2em;
+           background-color: rgb(64, 160, 224);
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: white;
+            transition: background-color .3s linear;
+        }
+
+        .form-user-button:hover{
+            background-color: rgb(88, 170, 224);
+        }
+
+        @media screen and (min-width: 600px) {
+            .form-user-input{
+            margin-bottom: 25px;
+            width: 60%;
+            
+            }
+
+            .grid label{
+            display: block;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+           
+        }
+        
+
+
+        @media screen and (min-width: 700px) {
+
+            #main-title{
+            margin-top: 2.8em;
+            font-size: 2.5em;
+        }
+
+            .form-section{
+            width: 50%;
+                margin: auto;
+                padding: 1em;
+                border-radius: 5px;
+        }
+
+        
+        .grid label{
+            display: block;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+        .grid:nth-child(3) label{
+            display: block;
+            text-align: center;
+        }
+        .form-user-input{
+            border: 0;
+            padding: .70em;
+            width: 60%;
+            margin: 10px 10px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+        }
+
+        .grid:nth-child(4){
+            text-align: center;
+        }
+
+        .grid:nth-child(4) .form-user-button{
+            margin-top: 20px;
+            
+        }
+
+
+        .form-user-input:focus{
+            outline: none;
+            border: 2px solid rgb(0, 140, 255);
+        }
+
+        .form-user-button{
+            padding: .60em 2em;
+           background-color: rgb(64, 160, 224);
+            border-radius: 5px;
+            border: none;
+            display: inline-block;
+            font-size: 1.3em;
+            color: white;
+            width: initial;
+        }
+            
+    }
+        
+
+
+       
+
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Cadastre-se, é grátis! :)</h1>
+
+    <section class="form-section">
+        <form action="/teste" method="post" class="form-user">
+
+           <div class="grid">
+                <label for="">Nome: </label>
+                <input type="text" name="nome" id="iputname" class="form-user-input" placeholder="Nome">
+           </div>
+
+           <div class="grid">
+                <label for="">Sobrenome: </label>
+                <input type="text" class="form-user-input" placeholder="Sobrenome" name="sobrenome">
+
+           </div>
+
+           <div class="grid">
+                <label for="">Seu melhor email: </label>
+                <input type="email" class="form-user-input" placeholder="@example.com" name="email"> 
+           </div>
+
+           <div class="grid">
+                <input type="submit" value="cadastrar" class="form-user-button" >
+           </div>
+
+            
+
+        </form> 
+
+    </section>
+</body>
+</html>
