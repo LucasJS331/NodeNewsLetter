@@ -1,5 +1,144 @@
 body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: blue;
+    background-image: linear-gradient(to right, rgb(22, 48, 194), rgb(9, 202, 236));
+    color: white;
+    text-align: center;
+}
+
+#main-title{
+    margin-top: 2em;
+    font-size: 2.5em;
+}
+
+.form-section{
+    width: 100%;
+    margin: auto;
+   padding: 1em;
+   box-sizing: border-box;
+}
+
+.form-user{
+    box-sizing: border-box;
+}
+
+
+
+.grid label{
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.form-user-input{
+    border: 0;
+    padding: .70em;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.form-user-input:focus{
+    outline: none;
+    border-color: turquoise;
+}
+
+.form-user-button{
+    width: 100%;
+    padding: .60em 2em;
+   background-color: rgb(64, 160, 224);
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    font-size: 1.3em;
+    color: white;
+    transition: background-color .3s linear;
+}
+
+.form-user-button:hover{
+    background-color: rgb(88, 170, 224);
+}
+
+@media screen and (min-width: 600px) {
+    .form-user-input{
+    margin-bottom: 25px;
+    width: 60%;
+    
+    }
+
+    .grid label{
+    display: block;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+   
+}
+
+
+
+@media screen and (min-width: 700px) {
+
+    #main-title{
+    margin-top: 2.8em;
+    font-size: 2.5em;
+}
+
+    .form-section{
+    width: 50%;
+        margin: auto;
+        padding: 1em;
+        border-radius: 5px;
+}
+
+
+.grid label{
+    display: block;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.grid:nth-child(3) label{
+    display: block;
+    text-align: center;
+}
+.form-user-input{
+    border: 0;
+    padding: .70em;
+    width: 60%;
+    margin: 10px 10px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.grid:nth-child(4){
+    text-align: center;
+}
+
+.grid:nth-child(4) .form-user-button{
+    margin-top: 20px;
+    
+}
+
+
+.form-user-input:focus{
+    outline: none;
+    border: 2px solid rgb(0, 140, 255);
+}
+
+.form-user-button{
+    padding: .60em 2em;
+   background-color: rgb(64, 160, 224);
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    font-size: 1.3em;
+    color: white;
+    width: initial;
+}
+    
 }

@@ -1,4 +1,5 @@
 # NodeNewsLetter
 Cadastre-se e receba as melhores noticias sobre NodeJs diretamente no seu e-mail!
 
-<img src>
+<img src="./git/first.gif">
+
