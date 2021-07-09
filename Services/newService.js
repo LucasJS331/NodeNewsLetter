@@ -31,6 +31,19 @@ class NewService{
             return [];
         }
     }
+
+    async EnviarStatus(id,campo){
+        try {
+            await db.update({enviada: campo}).from("noticia").where({id: id});
+            let result = true;
+            return result;
+            
+        } catch (error) {
+            console.log(error);
+            let result = false;
+            return result
+        }
+    }
 }
 
 module.exports = new NewService();

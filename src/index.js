@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.use(user);
 
 
-//todoo: esse app ja está fazendo o dever dele, vou fazer outro app para cuidar das news!
+//todoo: finalizei a parte de formatação do email, e fiz a logica do email para n ser enviado 2x, agr falta mexer no front/validação no  back com sessions
 
 
 app.listen(port, ()=>{
