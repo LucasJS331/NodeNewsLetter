@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": " nodemon ./src/index.js"
+    "dev": " nodemon -r dotenv/config ./src/index.js"
   },
   "author": "",
   "license": "Apache License",
   "dependencies": {
     "dateformat": "^4.5.1",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "knex": "^0.95.6",
