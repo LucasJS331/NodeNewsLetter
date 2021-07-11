@@ -2,18 +2,18 @@ const nodemailer = require("nodemailer");
 const UserService = require("../Services/UserService");
 const NewService = require("../Services/newService");
 const NewsFactory = require("../factory/NewsFactory");
-const utils = require("../Utils/var");
 
 
 module.exports = setInterval( async () => {
     try {
         const transporter = nodemailer.createTransport({
-            host: 'smtp.ethereal.email',
+            host: 'smtp.gmail.com',
             port: 587,
             auth: {
-                user: 'brenden.nikolaus@ethereal.email',
-                pass: 'AbwgentZXQfRKkM3FY'
+                user: process.env.EMAIL,
+                pass: process.env.EMAIL_PASS_KEY
             }
+    
         });
 
         // get all users and news
@@ -28,7 +28,7 @@ module.exports = setInterval( async () => {
                     let formatedNews = NewsFactory.toHTML(noticia);
 
                     await transporter.sendMail({
-                        from: 'NodeNews' + utils.email, // sender address
+                        from: 'NodeNews' + process.env.EMAIL, // sender address
                         to: user.email, // list of receivers
                         subject: formatedNews.titulo, // Subject line
                         text: formatedNews.text, // plain text body
@@ -48,7 +48,7 @@ module.exports = setInterval( async () => {
            console.log(error);
        }
 
-}, 30000);
+}, 20000);
 
 
 

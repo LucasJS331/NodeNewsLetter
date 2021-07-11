@@ -2,6 +2,8 @@ const dateFormat = require("dateformat");
 
 class NewsFactory{
     toHTML(n){
+
+        //Formata as noticias para sair com a estrutura HTML
         let formatedNews = {
             titulo: n.titulo ,
             text: n.corpo,
