@@ -18,25 +18,29 @@
 
            <div class="grid">
                 <label for="">Nome: </label>
-                <input type="text" name="nome" id="iputname" class="form-user-input" placeholder="Nome">
+                <input type="text" name="nome" class="form-user-input" placeholder="Nome" value="<%= nomeValue %>" required>
+                <label for="" style="color: rgb(218, 31, 31);"><%= nomeError %>  </label>
            </div>
 
            <div class="grid">
                 <label for="">Sobrenome: </label>
-                <input type="text" class="form-user-input" placeholder="Sobrenome" name="sobrenome">
+                <input type="text" class="form-user-input" placeholder="Sobrenome" name="sobrenome" value="<%= sobrenomeValue %>" required>
+                <label for="" style="color: rgb(196, 40, 40);"><%= sobrenomeError %>  </label>
 
            </div>
 
            <div class="grid">
                 <label for="">Seu melhor email: </label>
-                <input type="email" class="form-user-input" placeholder="@example.com" name="email"> 
+                <input type="email" class="form-user-input" placeholder="@example.com" name="email" value="<%= emailValue %>" required> 
+                <label  style="color: rgb(161, 35, 35);"><%= emailError %>  </label>
+                <label  style="color: rgb(189, 35, 35);"><%= emailExist %>  </label>
            </div>
 
            <div class="grid">
                 <input type="submit" value="cadastrar" class="form-user-button" >
            </div>
 
-        <p style="letter-spacing: 1.5px;">Como o node ajuda no desenvolvimento?</p>
+           <p> <%= nomeError %> </p>
         </form> 
 
     </section>

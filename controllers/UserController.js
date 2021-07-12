@@ -6,50 +6,115 @@ class User{
 
         let {nome,sobrenome,email} = req.body;
 
+        let nomeError;
+        let sobrenomeError;
+        let emailError;
+        let emailExist; 
+
+
         if(nome == undefined || nome == "" || nome.lenght <=1){
-            res.render("index");
-            return;
+            nomeError = "Nome invalido";
         }
 
         if(sobrenome == undefined || sobrenome == "" || nome.lenght <=1){
-            res.render("index");
-            return;
+            sobrenomeError = "sobrenome invalido";
         }
 
         if(!validator.isEmail(email)){
-            res.render("index");
-            return;
-        }
+            // se o email nao existir
+            emailError = "email invalido";
+          
+        } else{
+            // se existir então verifica se está cadastrado
+            try {
+                let result = await UserService.verifyUserExistByEmail(email);
 
-
-        try {
-            let result = await UserService.verifyUserExistByEmail(email);
-
-            if(result){
-                res.render("index");
-            } else if(!result){
-
-                let verify = await UserService.NewUser(nome,sobrenome,email);
-
-                if(verify){
-
-                    res.render("success",{
-                        nome,
-                        sobrenome
-                    });
-                } else{
-                    res.render("index");
+                if(result){
+                    emailExist = "o email já existe";
                 }
-                
-            } else{
-                res.render("index");
+  
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        
+        try {
+            if(nomeError != undefined || sobrenomeError != undefined || emailError != undefined || emailExist != undefined){
+                req.flash("nomeError", nomeError);
+                req.flash("sobrenomeError", sobrenomeError);
+                req.flash("emailError", emailError);
+                req.flash("emailExist", emailExist);
+                req.flash("emailValue", email);
+                req.flash("nomeValue", nome);
+                req.flash("sobrenomeValue", sobrenome);
+
+                res.redirect("/");
+                return;
             }
 
+            res.render("success", {nome});
+
+            await UserService.NewUser(nome,sobrenome, email);
         } catch (error) {
-            res.json({err: "deu erro man"});
             console.log(error);
+            res.redirect("/");
         }
+        
+        
+
+       
     }
+
+    async renderIndex(req,res){
+        let nomeError = req.flash("nomeError");
+        let nomeValue = req.flash("nomeValue");
+        let sobrenomeError = req.flash("sobrenomeError");
+        let sobrenomeValue = req.flash("sobrenomeValue");
+        let emailError = req.flash("emailError");
+        let emailExist = req.flash("emailExist");
+        let emailValue = req.flash("emailValue");
+
+
+        if(nomeError == undefined || nomeError.length == 0){
+            nomeError == "";
+        }
+
+        
+        if(nomeValue == undefined || nomeValue.length == 0){
+            nomeValue == "";
+        }
+
+        if(sobrenomeError == undefined || sobrenomeError.length == 0){
+            sobrenomeError == "";
+        }
+
+        if(sobrenomeValue == undefined || sobrenomeValue.length == 0){
+            sobrenomeValue == "";
+        }
+
+        if(emailError == undefined || emailError.length == 0){
+            emailError == "";
+        }
+
+        if(emailExist == undefined || emailExist.length == 0){
+            sobrenomeError == "";
+        }
+
+        if(emailValue == undefined || emailValue.length == 0){
+            emailValue == "";
+        }
+        
+        
+        res.render("index", {
+             nomeError,
+             nomeValue,
+             sobrenomeValue,
+             sobrenomeError,
+             emailValue,
+             emailError,
+             emailExist
+            });
+        }
 }
 
 

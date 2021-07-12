@@ -6,7 +6,10 @@ const port = 3000;
 const { dirname } = require('path');
 const connection = require("../db/connection");
 const user = require("../routes/UserRouter");
-const info = require("./sendEmail");
+//const info = require("./sendEmail");
+const session = require("express-session");
+const flash = require("express-flash");
+const cookieP = require("cookie-parser");
 
 
 //basic configuration
@@ -15,10 +18,20 @@ app.use(express.urlencoded({extended: false}));
 app.use(json());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+
+app.use(cookieP("jfnjefnej"));
+app.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {maxAge: 3600000}
+  }))
+
+app.use(flash());
 app.use(user);
 
 
-//todoo: finalizei a parte de formatação do email, e fiz a logica do email para n ser enviado 2x, agr falta mexer no front/validação no  back com sessions
+//todoo: 8h pra conseguir finalmente usar esse express-session, agora falta finalizar com o front-end '-'
 
 
 app.listen(port, ()=>{
