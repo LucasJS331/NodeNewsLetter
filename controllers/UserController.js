@@ -12,13 +12,14 @@ class User{
         let emailExist; 
 
 
-        if(nome == undefined || nome == " " || nome.lenght <=1){
+        if(nome == undefined || nome == " " || nome.length <=1){
             nomeError = "Nome invalido!";
         }
 
-        if(sobrenome == undefined || sobrenome == " " || nome.lenght <=1){
+        if(sobrenome == undefined || sobrenome == " " || sobrenome.length <=1){
             sobrenomeError = "sobrenome invalido!";
         }
+  
 
         if(!validator.isEmail(email)){
             // se o email nao existir
