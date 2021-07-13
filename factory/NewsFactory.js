@@ -12,7 +12,6 @@ class NewsFactory{
                     "<p style='line-height: 1.5; color: rgb(32, 33, 32);'>" + n.corpo + "</p>" + 
                     " <a href='#' style='color: white; text-decoration: none; padding: 10px; border-radius: 5px;background-color: rgb(15, 204, 15);display: inline-block; margin-top: 6px;'>" + 
                     "mais noticias! </a>",
-
         }
 
         return formatedNews;

@@ -11,35 +11,31 @@
     <link rel="icon" href='/img/favicon.ico'>
 </head>
 <body>
-    <h1 id="main-title">Cadastre-se, é grátis! :)</h1>
+     <h1 id="main-title">Cadastre-se e receba as melhores noticias sobre NodeJs, é grátis! :)</h1>
 
     <section class="form-section">
         <form action="/teste" method="post" class="form-user">
 
-           <div class="grid">
-                <label for="">Nome: </label>
+                
+                <label class="form-label">Nome: </label>
                 <input type="text" name="nome" class="form-user-input" placeholder="Nome" value="<%= nomeValue %>" required>
-                <label for="" style="color: rgb(218, 31, 31);"><%= nomeError %>  </label>
-           </div>
-
-           <div class="grid">
-                <label for="">Sobrenome: </label>
+                <label class="form-error-label" ><%= nomeError %>  </label>
+           
+                <label class="form-label">Sobrenome: </label>
                 <input type="text" class="form-user-input" placeholder="Sobrenome" name="sobrenome" value="<%= sobrenomeValue %>" required>
-                <label for="" style="color: rgb(196, 40, 40);"><%= sobrenomeError %>  </label>
+                <label class="form-error-label" class="form-error-label"><%= sobrenomeError %>  </label>
 
-           </div>
 
-           <div class="grid">
-                <label for="">Seu melhor email: </label>
+           
+                <label class="form-label">Seu melhor email: </label>
                 <input type="email" class="form-user-input" placeholder="@example.com" name="email" value="<%= emailValue %>" required> 
-                <label  style="color: rgb(161, 35, 35);"><%= emailError %>  </label>
-                <label  style="color: rgb(189, 35, 35);"><%= emailExist %>  </label>
-           </div>
+                <label class="form-error-label" ><%= emailError %>  </label>
+                <label class="form-error-label"><%= emailExist %>  </label>
+           
 
-           <div class="grid">
+           
                 <input type="submit" value="cadastrar" class="form-user-button" >
-           </div>
-
+          
            <p> <%= nomeError %> </p>
         </form> 
 

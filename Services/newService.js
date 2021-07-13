@@ -13,11 +13,11 @@ class NewService{
                 thumb: thumb
             }).from("noticia");
 
-            return result
+            return result;
 
         } catch (error) {
             console.log(error);
-            return undefined
+            return undefined;
         }
     }
 
@@ -41,7 +41,7 @@ class NewService{
         } catch (error) {
             console.log(error);
             let result = false;
-            return result
+            return result;
         }
     }
 }

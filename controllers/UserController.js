@@ -12,17 +12,17 @@ class User{
         let emailExist; 
 
 
-        if(nome == undefined || nome == "" || nome.lenght <=1){
-            nomeError = "Nome invalido";
+        if(nome == undefined || nome == " " || nome.lenght <=1){
+            nomeError = "Nome invalido!";
         }
 
-        if(sobrenome == undefined || sobrenome == "" || nome.lenght <=1){
-            sobrenomeError = "sobrenome invalido";
+        if(sobrenome == undefined || sobrenome == " " || nome.lenght <=1){
+            sobrenomeError = "sobrenome invalido!";
         }
 
         if(!validator.isEmail(email)){
             // se o email nao existir
-            emailError = "email invalido";
+            emailError = "email é invalido!";
           
         } else{
             // se existir então verifica se está cadastrado
@@ -30,7 +30,7 @@ class User{
                 let result = await UserService.verifyUserExistByEmail(email);
 
                 if(result){
-                    emailExist = "o email já existe";
+                    emailExist = "esse email já está cadastrado!";
                 }
   
             } catch (error) {
@@ -40,6 +40,7 @@ class User{
         
         try {
             if(nomeError != undefined || sobrenomeError != undefined || emailError != undefined || emailExist != undefined){
+                // cria as flash mensages 
                 req.flash("nomeError", nomeError);
                 req.flash("sobrenomeError", sobrenomeError);
                 req.flash("emailError", emailError);

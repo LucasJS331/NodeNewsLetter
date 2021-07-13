@@ -1,14 +1,30 @@
 body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(to right, rgb(22, 48, 194), rgb(9, 202, 236));
+    background-image: linear-gradient(to right, rgb(24, 138, 33), rgb(0, 247, 152));
     color: white;
     text-align: center;
 }
 
+label{
+    display: block;
+    margin-bottom: 0px;
+}
+
+.form-error-label{
+    color: #f81b1bc2;
+    text-align: left;
+    margin-bottom: .20em;
+    font-weight: bold;
+}
+.form-label{
+    margin: 1em 0 .20em 0;
+}
+
 #main-title{
-    margin-top: 2em;
-    font-size: 2.5em;
+    margin: 1.5em auto .10em auto;
+    font-size: 1.7em;
+    padding: .35em;
 }
 
 .form-section{
@@ -20,15 +36,9 @@ body{
 
 .form-user{
     box-sizing: border-box;
+    text-align: center;
 }
 
-
-
-.grid label{
-    display: block;
-    text-align: left;
-    margin-bottom: 10px;
-}
 
 .form-user-input{
     border: 0;
@@ -43,13 +53,13 @@ body{
 
 .form-user-input:focus{
     outline: none;
-    border-color: turquoise;
+    border: 2px solid rgb(21, 255, 0);
 }
 
 .form-user-button{
     width: 100%;
     padding: .60em 2em;
-   background-color: rgb(64, 160, 224);
+   background-color: rgb(14, 136, 44);
     border-radius: 5px;
     border: none;
     margin-top: 20px;
@@ -59,20 +69,29 @@ body{
 }
 
 .form-user-button:hover{
-    background-color: rgb(88, 170, 224);
+    background-color: rgb(6, 77, 21);
 }
 
-@media screen and (min-width: 600px) {
-    .form-user-input{
-    margin-bottom: 25px;
-    width: 60%;
-    
+
+
+@media screen and (min-width: 37.5em) {
+
+
+    #main-title{
+        margin: 1.6em auto 0 auto;
+        font-size: 2em;
+        padding: 0;
+        width: 80%;
     }
 
-    .grid label{
-    display: block;
-    text-align: center;
-    margin-bottom: 0px;
+    .form-error-label{
+        text-align: center;
+        
+    }
+    .form-user-input{
+        margin-bottom: 0px;
+        width: 60%;
+    
     }
 
     .form-user-button{
@@ -80,71 +99,60 @@ body{
     }
 
     
-
    
 }
 
 
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 43.75em) {
 
     #main-title{
-    margin-top: 2.3em;
-    font-size: 2.5em;
-}
+    margin: 110px auto 0 auto;
+    font-size: 2em;
+    width: 50%;
+    
+    }
+
+    .form-error-label{
+        text-align: left;
+        
+    }
 
     .form-section{
-    width: 50%;
+        width: 30%;
         margin: auto;
-        padding: 1em;
         border-radius: 5px;
-}
+        padding: 0;
+    }
 
 
-.grid label{
-    display: block;
-    text-align: center;
-    margin-bottom: 0px;
-}
+    .form-user-input{
+        border: 0;
+        padding: .70em;
+        width: 100%;
+        border-radius: 5px;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+    }
 
-.grid:nth-child(3) label{
-    display: block;
-    text-align: center;
-}
-.form-user-input{
-    border: 0;
-    padding: .70em;
-    width: 60%;
-    margin: 10px 10px;
-    border-radius: 5px;
-    border: 2px solid transparent;
-    box-sizing: border-box;
-}
 
-.grid:nth-child(4){
-    text-align: center;
-}
 
-.grid:nth-child(4) .form-user-button{
-    margin-top: 20px;
+    .form-user-button{
+        padding: .60em 2em;
+        border: none;
+        display: inline-block;
+        font-size: 1.3em;
+        width: initial;
+        margin-top: 15px;
+    }
     
 }
 
-
-.form-user-input:focus{
-    outline: none;
-    border: 2px solid rgb(0, 140, 255);
-}
-
-.form-user-button{
-    padding: .60em 2em;
-   background-color: rgb(64, 160, 224);
-    border-radius: 5px;
-    border: none;
-    display: inline-block;
-    font-size: 1.3em;
-    color: white;
-    width: initial;
-}
-    
+@media screen and (min-width: 62.5em) {
+    #main-title{
+        margin: 103px auto 0 auto;
+        font-size: 1.8em;
+        width: 30%;
+        
+    }
 }

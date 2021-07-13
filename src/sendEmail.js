@@ -48,7 +48,7 @@ module.exports = setInterval( async () => {
            console.log(error);
        }
 
-}, 20000);
+},86400000);
 
 
 
