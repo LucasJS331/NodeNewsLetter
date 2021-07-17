@@ -15,12 +15,9 @@ module.exports = setInterval( async () => {
             }
     
         });
-
-        // get all users and news
+      
         let users = await UserService.selectAll();
         let news = await  NewService.SelectAllNews();
-
-
 
         users.forEach( async user => {
             news.forEach(async noticia =>{

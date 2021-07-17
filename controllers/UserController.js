@@ -12,21 +12,21 @@ class User{
         let emailExist; 
 
 
-        if(nome == undefined || nome == " " || nome.length <=1){
+        if(nome == undefined || nome.trim() == "" || nome.length <=1){
             nomeError = "Nome invalido!";
         }
 
-        if(sobrenome == undefined || sobrenome == " " || sobrenome.length <=1){
+        if(sobrenome == undefined || sobrenome.trim() == "" || sobrenome.length <=1){
             sobrenomeError = "sobrenome invalido!";
         }
   
 
         if(!validator.isEmail(email)){
-            // se o email nao existir
+            // se o email for invalido
             emailError = "email é invalido!";
           
         } else{
-            // se existir então verifica se está cadastrado
+            // se for valido então verifica se está cadastrado
             try {
                 let result = await UserService.verifyUserExistByEmail(email);
 
@@ -78,32 +78,32 @@ class User{
 
 
         if(nomeError == undefined || nomeError.length == 0){
-            nomeError == "";
+            nomeError = "";
         }
 
         
         if(nomeValue == undefined || nomeValue.length == 0){
-            nomeValue == "";
+            nomeValue = "";
         }
 
         if(sobrenomeError == undefined || sobrenomeError.length == 0){
-            sobrenomeError == "";
+            sobrenomeError = "";
         }
 
         if(sobrenomeValue == undefined || sobrenomeValue.length == 0){
-            sobrenomeValue == "";
+            sobrenomeValue = "";
         }
 
         if(emailError == undefined || emailError.length == 0){
-            emailError == "";
+            emailError = "";
         }
 
         if(emailExist == undefined || emailExist.length == 0){
-            sobrenomeError == "";
+            sobrenomeError = "";
         }
 
         if(emailValue == undefined || emailValue.length == 0){
-            emailValue == "";
+            emailValue = "";
         }
         
         
